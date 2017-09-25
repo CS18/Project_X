@@ -1,0 +1,79 @@
+About 60% of the code was written while looking at references from http://programarcadegames.com/index.php?lang=en&chapter=python_as_calculator.
+This is a site with tutorials for the pygame library that is essential to the innerworkings
+of my project. The other 40% is me putting my problem solving skills to the test (genesis(),
+the level system, limiting the projectiles, spray(), a few of the classes, a few functions etc.)
+All sprites were created by me in Microsoft Pain
+
+TLDR; sprites are blitted to the screen 60 x per sec and manipulated in between to create movement.
+lots of functions and classes. Commenting code sucks.
+
+I'll explain the really important code starting at the top of the project_x.py file and ending at the bottom:
+-----------------------------(CLASSES)
+--Player_ship---
+Beyond the imports and pygame.init(), which intializes the pygame library, we can see that I have
+defined some colors (RGB Triples) to be used later in the program when color is need
+After that,I implement the Player_Ship class which represents the human player.
+This class contans two functions, an init function that creates the player ship and defines
+some values such as screen boundaries and the rate at which the x and y values of the ship will change.
+Update simply updates all of these values each time a frame passes, 60 times per second.
+
+---Enemy_ships 1 and 3----
+The only major differences between the player_ship class and the enemy_ship classes is the
+way the boundaries work. For the enemies, the boundaries are set to make the enemies bounce off the
+edges of the screen and change directions.
+
+----Boss_ship----
+this class initializes the boss at the end of the game. The boss has an extra function called spray that
+causes the boss to spray bullets in an arc at the player. I figured that this would be more of a challenge, and it
+looks cooler
+
+----Bullet------
+The bullet was essential to get right. as you can see the init function accepts different arguments that
+determine where the bullet starts and where it is going. This class is specifically for the
+player though, because I couldn't tailor it to work for the enemies too
+
+----Bomb------
+The bomb is basically a slower, more powerful bullet. It works the exact same way
+
+----EnemyBullet----
+Same thing as the regular bullet, but with the player as the dest always.
+
+------------------------(Important functions)
+-----button-----
+allows me to create clickable buttons that lead to other functions being performed
+
+-----Youwin-------
+This is the level clear screen. It works by drawing to the screen on a loop
+until a button is pressed and another function is performed
+
+------Gameover-------
+Same thing as you win, except only when you die
+
+#note the lists come a bit later, but they basically hold the sprites that are displayed on screen,
+so they need to be emptied between levels
+
+-------all those damn lists-----
+As I just said (didn't realize it was next) the lists hold the sprites and allow me to control them as individual
+groups if need be. I have them seperated by type of sprite, and the global sprites list (which contains all sprites) is called every frame
+(60 frames per sec) in order to update the screen and make everything move.
+
+-----Genesis and the level list------
+These two things work in tandem to determine what level you are on and
+how many enemies will be drawn accordingly. I made level a list because I can append and
+clear it as I need to. This allows me to determine the level(game level) based on the length of level(the list). for example,
+if len(level) == 0, then draw 2 of enemy type 1. Once they are defeated, append a value to level to increase its length
+and repeat the process with a different outcome
+
+
+
+----title loop----
+just like gameover() and you win().
+
+---- MAIN LOOP( AKA Where the magic happens ) --------
+The main loop is where the game is actually brought together
+it contains event code( such as changing the player ship's x and y when you press a direction),
+game logic( such as collision detection), and the drawing code (updates the screen 60 x per sec).
+
+
+
+

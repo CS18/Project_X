@@ -1,0 +1,35 @@
+In order to run this program, a library called PyGame is required.
+Pygame is a free library for python game development that allowed me to
+create my game without too many headaches. The problem with this though, is that
+I could not get the cs50 IDE to install the library (through pip install PyGame).
+To develop this game, I used an IDE called PyCharm. Therefore I will be explaining
+the steps that I took to ready Pycharm for use in my project.
+
+"on second thought, i'll just include the files but here they are if you need them"
+--------files should be in file folder, or get them below--------------
+
+First i downloaded and installed Python 3.4.3
+https://www.python.org/download/releases/3.4.3/
+
+Then I downloaded and installedPycharm (Free Community version)
+https://www.jetbrains.com/pycharm/download/#section=windows
+
+Lastly I downloaded the Pygame library, which is essential to the program. (I know the site looks weird, but its safe)
+I have pygame-1.9.2a0.win32  http://www.pygame.org/download.shtml
+
+From here I was able to install the Pygame library into the Pycharm IDE
+and begin my project.
+
+Once you get to this point, you would simply need to run the code located in the file project_x.py
+this can be done by pressing the green arrow in the upper right corner. If the arrow cannot be pressed,
+it is because the file path has not been set correctly. In that case, simply click on the drop down menu
+next to the arrow and edit configurations so that the path leads to project_x.py
+
+--------IMPORTANT---------
+-----I personally would have liked to do my coding in the CS50 IDE, which would have been less of a hassle,
+but I could not get the pygame library to install. I emailed my TF, and she said it would be fine to use an outside
+IDE. I was hoping that between then and now I would figure out how to install PyGame in CS50 IDE, but I always get an error
+message:   Could not find a version that satisfies the requirement pygame (from versions: 1.9.2rc1)
+I also tried making an executable in hopes of being able to send the working product to you in that way, but unfortunately
+that has not worked either. I know that the spec says that you shouldn't need to contact me, but if the above doesn't work and you
+need to see the working product, please reach out: calvin_stewart@college.harvar.edi
